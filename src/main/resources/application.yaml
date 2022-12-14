@@ -1,0 +1,25 @@
+bot:
+  name: GoogleInfoBot
+  token: ${VIBER_BOT_TOKEN}
+  avatar: http://viber.com/avatar.jpg
+  webHookUri: https://9e40-212-90-60-98.eu.ngrok.io/hook
+
+externalUri: https://9e40-212-90-60-98.eu.ngrok.io
+
+logging:
+  level:
+    com.viber: debug
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            redirectUri: https://9e40-212-90-60-98.eu.ngrok.io/login/google
+            clientId: ${GOOGLE_CLIENT_ID}
+            clientSecret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
+              - https://www.googleapis.com/auth/drive
